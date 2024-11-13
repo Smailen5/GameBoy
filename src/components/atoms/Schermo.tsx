@@ -1,5 +1,3 @@
-import { twMerge } from "tailwind-merge";
-
 const Display = () => {
   return (
     <main className="h-40 w-44 bg-green-300 shadow-inner shadow-black"></main>
@@ -15,23 +13,24 @@ const BatteryCheck = () => {
   );
 };
 
-const Bar = ({ className }: { className?: string }) => {
+const Bar = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className={twMerge("flex w-full flex-col gap-0.5", className)}>
-      <div className="h-0.5 w-full bg-red-500" />
-      <div className="h-0.5 w-full bg-blue-500" />
+    <div className="flex w-full flex-col gap-0.5">
+      <div className="h-0.5 bg-red-500" />
+      <div className="h-0.5 bg-blue-500" />
+      {children}
     </div>
   );
 };
 
 const Header = () => {
   return (
-    <header className="absolute top-2 grid w-full grid-cols-6 items-center px-2 gap-2">
-      <Bar className="col-span-2" />
-      <span className="col-span-3 text-[.5rem] uppercase text-white">
-        dot matrix with stero sound
-      </span>
-      <Bar className="col-span-1" />
+    <header className="absolute top-3 flex w-full items-center px-3">
+      <Bar>
+        <span className="absolute -top-1 right-2 -translate-x-1/3 bg-zinc-500 px-1 text-[.5rem] uppercase text-white">
+          dot matrix with stero sound
+        </span>
+      </Bar>
     </header>
   );
 };
