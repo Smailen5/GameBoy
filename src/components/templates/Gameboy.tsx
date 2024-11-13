@@ -1,12 +1,15 @@
+import { Logo } from "../atoms/Logo";
 import { Schermo } from "../atoms/Schermo";
-import { Tasto } from "../atoms/Tasto";
+// import { ActionButtons } from "../atoms/Tasto";
+import { ContainerButtons } from "../molecules/ContainerButtons";
 
 export const Gameboy = () => {
   return (
     <div className="rounded-lg bg-white p-10">
       <Schermo />
+      <Logo />
 
-      <Tasto/>
+      <ContainerButtons/>
     </div>
   );
 };
